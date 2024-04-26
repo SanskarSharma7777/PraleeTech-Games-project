@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gurukul ERP</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body class="bg-gray-900 text-white">
+  <div class="flex h-auto">
+    <!-- Sidebar -->
+    <div class="w-auto  h-full bg-gray-800">
+      <div class="p-4">
+        <h1 class="text-3xl font-bold mb-8 text-center lg:text-left">Gurukul ERP</h1>
+        <nav class="space-y-4">
+          <a href="#dashboard"
+            class="block px-4 py-2 rounded-lg text-lg font-semibold transition-colors hover:bg-gray-700" ><ion-icon name="eye-outline" class="text-xl flex justify around"></ion-icon>Dashboard</a>
+          <a href="#admissions"
+            class="block px-4 py-2 rounded-lg text-lg font-semibold transition-colors hover:bg-gray-700"><ion-icon name="school-outline" class="text-xl flex justify around"></ion-icon> Admissions</a>
+          <a href="#students"
+            class="block px-4 py-2 rounded-lg text-lg font-semibold transition-colors hover:bg-gray-700"><ion-icon name="people-outline" class="text-xl flex justify around"></ion-icon>Students</a>
+          <a href="#fees"
+            class="block px-4 py-2 rounded-lg text-lg font-semibold transition-colors hover:bg-gray-700"><ion-icon name="logo-paypal" class="text-xl flex justify around"></ion-icon> Fees &
+            Payments</a>
+          <a href="#timetable"
+            class="block px-4 py-2 rounded-lg text-lg font-semibold transition-colors hover:bg-gray-700"> <ion-icon name="hourglass-outline" class="text-xl flex justify around"></ion-icon>Time Table</a>
+          <a href="#quiz"
+            class="block px-4 py-2 rounded-lg text-lg font-semibold transition-colors hover:bg-gray-700"> <ion-icon name="help-circle-outline" class="text-xl flex justify around"></ion-icon>Quiz</a>
+          <a href="#results"
+            class="block px-4 py-2 rounded-lg text-lg font-semibold transition-colors hover:bg-gray-700"> <ion-icon name="newspaper-outline" class="text-xl flex justify around"></ion-icon>Results</a>
+          <a href="Menu.html"
+            class="block px-4 py-2 rounded-lg text-lg font-semibold transition-colors hover:bg-gray-700"> <ion-icon name="git-network-outline" class="text-xl flex justify around"></ion-icon>Departments</a>
+          <a href="#notifications"
+            class="block px-4 py-2 rounded-lg text-lg font-semibold transition-colors hover:bg-gray-700"><ion-icon name="notifications-outline" class="text-xl flex justify around"></ion-icon> Notifications</a>
+          <a href="#settings"
+            class="block px-4 py-2 rounded-lg text-lg font-semibold transition-colors hover:bg-gray-700"><ion-icon name="settings-outline" class="text-xl flex justify around"></ion-icon>Settings</a>
+          <div class="flex items-center space-x-4">
+          </div>
+        </nav>
+      </div>
+    </div>
+    <!-- End of Sidebar -->
+    <!-- Main Content -->
+    <div class="flex-1 relative">
+      <!-- Toggle Sidebar Button -->
+      <!-- <button id="toggleSidebar" class="absolute top-0 left-0 w-auto bg-gray-800 text-white px-4 py-2 rounded-full focus:outline-none z-50">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M3 10a2 2 0 100-4 2 2 0 000 4zM9 10a2 2 0 100-4 2 2 0 000 4zM17 10a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                </svg>
+            </button> -->
+      <!-- End of Toggle Sidebar Button -->
+
+
+      <!-- Dashboard Section -->
+      <section id="dashboard" class="relative top-0 left-0 "></section>
+      <!-- Header -->
+      <header class="bg-gray-700 border-b border-gray-600 py-4 px-6 flex justify-between items-center">
+        <div class="flex gap-4">
+          <button id="toggleSidebar">
+            <ion-icon class="text-2xl flex justify-center items-center" name="grid-outline"></ion-icon>
+          </button>
+          <h1 class="text-3xl font-bold">Dashboard</h1>
+        </div>
+        <div class="flex items-center space-x-4">
+          <div class="relative">
+            <input type="text" placeholder="Search"
+              class="border border-gray-600 rounded px-4 py-2 focus:outline-none focus:border-indigo-500 transition-colors bg-gray-800">
+            <ion-icon class="absolute right-4 top-3" name="search-outline"></ion-icon>
+          </div>
+          <!-- <div class="relative group">
+                            <button class="text-gray-400 group-hover:text-indigo-500 focus:outline-none focus:text-indigo-500 transition-colors">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
+                                    <path fill-rule="evenodd" d="M10 2a8 8 0 100 16 8 8 0 000-16zM3 10a7 7 0 1114 0 7 7 0 01-14 0z" />
+                                </svg>
+                            </button>
+                            <div class="hidden bg-gray-800 text-base rounded-lg shadow-md right-0 mt-10 w-36 p-2 group-hover:block">
+                                <a href="#" class="block px-4 py-2 text-gray-300 hover:bg-gray-600">Change User</a>
+                                <a href="#" class="block px-4 py-2 text-gray-300 hover:bg-gray-600">Sign Out</a>
+                            </div>
+                        </div> -->
+          <div class="relative">
+            <img id="profilepic"
+              src="https://png.pngtree.com/png-vector/20220709/ourmid/pngtree-businessman-user-avatar-wearing-suit-with-red-tie-png-image_5809521.png"
+              alt="User Avatar" class="w-10 h-10 rounded-full transition-transform transform hover:scale-110">
+            <div id="profilemenu"
+              class="hidden bg-gray-800 text-base rounded-lg shadow-md -left-28 w-36 mt-2 p-2 absolute">
+              <a href="#" class="block px-4 py-2 text-gray-300 hover:bg-gray-600">Change User</a>
+              <a href="#" class="block px-4 py-2 text-gray-300 hover:bg-gray-600">Settings</a>
+              <a href="#" class="block px-4 py-2 text-gray-300 hover:bg-gray-600">Help and Support</a>
+              <a href="#" class="block px-4 py-2 text-gray-300 hover:bg-gray-600">Sign Out</a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="p-6 space-y-6">
+        <!-- Analysis Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Total Students Card -->
+          <div
+            class="card bg-gray-800 rounded-lg shadow-md p-6 transition-transform hover:scale-105 flex flex-col justify-center items-center space-y-2">
+            <h2 class="text-lg font-semibold">Total Students</h2>
+            <p class="text-gray-400">Number of students enrolled</p>
+            <div class="text-3xl font-bold text-indigo-400">1000</div>
+            <canvas id="enrollmentBarChart" class="w-24 h-12"></canvas>
+          </div>
+          <!-- Total Admissions Card -->
+          <div
+            class="card bg-gray-800 rounded-lg shadow-md p-6 transition-transform hover:scale-105 flex flex-col justify-center items-center space-y-2">
+            <h2 class="text-lg font-semibold">Total Admissions</h2>
+            <p class="text-gray-400">Number of admissions made</p>
+            <div class="text-3xl font-bold text-indigo-400">500</div>
+            <canvas id="admissionsBarChart" class="w-24 h-12"></canvas>
+          </div>
+          <!-- Total Fees & Payments Card -->
+          <div
+            class="card bg-gray-800 rounded-lg shadow-md p-6 transition-transform hover:scale-105 flex flex-col justify-center items-center space-y-2">
+            <h2 class="text-lg font-semibold">Total Fees & Payments</h2>
+            <p class="text-gray-400">Amount of fees received</p>
+            <div class="text-3xl font-bold text-indigo-400">₹150,000</div>
+            <p class="text-gray-400">Amount of fees due</p>
+            <div class="text-3xl font-bold text-indigo-400">₹50,000</div>
+            <canvas id="feesDoughnutChart" class="w-24 h-12"></canvas>
+          </div>
+          <!-- Total Time Table Card -->
+          <div
+            class="card bg-gray-800 rounded-lg shadow-md p-6 transition-transform hover:scale-105 flex flex-col justify-center items-center space-y-2">
+            <h2 class="text-lg font-semibold">Total Time Table</h2>
+            <p class="text-gray-400">Number of classes scheduled</p>
+            <div class="text-3xl font-bold text-indigo-400">30</div>
+            <canvas id="timeTableLineChart" class="w-24 h-12"></canvas>
+          </div>
+          <!-- Total Departments Card -->
+          <div
+            class="card bg-gray-800 rounded-lg shadow-md p-6 transition-transform hover:scale-105 flex flex-col justify-center items-center space-y-2">
+            <h2 class="text-lg font-semibold">Total Departments</h2>
+            <div class="text-3xl font-bold text-indigo-400">6</div>
+            <canvas id="DepartmentsDoughnutChart" class="w-24 h-12"></canvas>
+          </div>
+
+          <!-- Total Quiz Card -->
+          <div
+            class="card bg-gray-800 rounded-lg shadow-md p-6 transition-transform hover:scale-105 flex flex-col justify-center items-center space-y-2">
+            <h2 class="text-lg font-semibold">Quiz</h2>
+            <div class="text-3xl font-bold text-indigo-400">6</div>
+            <canvas id="quizDoughnutChart" class="w-24 h-12"></canvas>
+          </div>
+          <!-- Total Results Card -->
+          <div
+            class="card bg-gray-800 rounded-lg shadow-md p-6 transition-transform hover:scale-105 flex flex-col justify-center items-center space-y-2">
+            <h2 class="text-lg font-semibold">Results</h2>
+            <div class="text-3xl font-bold text-indigo-400">Pass = 80%</div>
+            <div class="text-3xl font-bold text-indigo-400">Fail = 20%</div>
+            <canvas id="resultsDoughnutChart" class="w-24 h-12"></canvas>
+          </div>
+          <!-- Total Notifications Card -->
+          <div
+            class="card bg-gray-800 rounded-lg shadow-md p-6 transition-transform hover:scale-105 flex flex-col justify-center items-center space-y-2">
+            <h2 class="text-lg font-semibold">Notifications</h2>
+            <div class="text-3xl font-bold text-indigo-400">Total = 6</div>
+            <div class="text-3xl font-bold text-indigo-400">Unread = 2</div>
+            <div
+              class="button bg-indigo-700 hover:bg-indigo-800 text-white rounded-full py-2 px-6 text-center cursor-pointer transition-colors">
+              View Notifications
+            </div>
+            <div
+              class="button bg-indigo-700 hover:bg-indigo-800 text-white rounded-full py-2 px-6 text-center cursor-pointer transition-colors">
+              Mark As All Read
+            </div>
+          </div>
+        </div>
+
+        <!-- Create New Record Button -->
+        <div
+          class="button bg-indigo-700 hover:bg-indigo-800 text-white rounded-full py-2 px-6 text-center cursor-pointer transition-colors">
+          Create New Record
+        </div>
+
+        <!-- Table for Records -->
+        <div class="mt-8">
+          <h2 class="text-2xl font-semibold">Records</h2>
+          <div class="overflow-x-auto mt-4">
+            <table class="min-w-full divide-y divide-gray-700">
+              <thead>
+                <tr>
+                  <th
+                    class="px-4 py-3 bg-gray-800 text-left text-xs leading-4 font-medium text-gray-300 uppercase tracking-wider">
+                    Name</th>
+                  <th
+                    class="px-4 py-3 bg-gray-800 text-left text-xs leading-4 font-medium text-gray-300 uppercase tracking-wider">
+                    Email Address</th>
+                  <!-- Add more columns for other fields as needed -->
+                </tr>
+              </thead>
+              <tbody class="bg-gray-900 divide-y divide-gray-700">
+                <tr>
+                  <td class="px-4 py-4 whitespace-no-wrap">Sanskar Sharma</td>
+                  <td class="px-4 py-4 whitespace-no-wrap">sanskarsharmajio@gmail.com</td>
+                  <!-- Add more cells for other fields as needed -->
+                </tr>
+                <tr>
+                  <td class="px-4 py-4 whitespace-no-wrap">Nandini Sharma</td>
+                  <td class="px-4 py-4 whitespace-no-wrap">sharmanandini7421@gmail.com</td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-4 whitespace-no-wrap">Harsh Rathore</td>
+                  <td class="px-4 py-4 whitespace-no-wrap">harshrathore0511@gmail.com</td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-4 whitespace-no-wrap">Udit Maltare</td>
+                  <td class="px-4 py-4 whitespace-no-wrap">uditmaltare@gmail.com</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </main>
+      </section>
+    </div>
+    <script>
+      // JavaScript code for charts
+      // Enrollment Bar Chart
+      var enrollmentCtx = document.getElementById('enrollmentBarChart').getContext('2d');
+      var enrollmentBarChart = new Chart(enrollmentCtx, {
+        type: 'bar',
+        data: {
+          labels: ['Enrollment'],
+          datasets: [{
+            label: 'Total Enrollment',
+            data: [1000], // Assuming total enrollment is 1000
+            backgroundColor: 'rgba(255, 99, 132, 0.5)',
+            borderColor: 'rgba(255, 99, 132, 1)',
+            borderWidth: 1
+          }]
+        },
+        options: {
+          scales: {
+            x: {
+              stacked: true
+            },
+            y: {
+              beginAtZero: true
+            }
+          }
+        }
+      });
+
+      // Admissions Bar Chart
+      var admissionsCtx = document.getElementById('admissionsBarChart').getContext('2d');
+      var admissionsBarChart = new Chart(admissionsCtx, {
+        type: 'bar',
+        data: {
+          labels: ['Admissions'],
+          datasets: [{
+            label: 'Total Admissions',
+            data: [500], // Assuming 500 admissions made
+            backgroundColor: 'rgba(255, 193, 7, 0.5)',
+            borderColor: 'rgba(255, 193, 7, 1)',
+            borderWidth: 1
+          }]
+        },
+        options: {
+          scales: {
+            x: {
+              stacked: true
+            },
+            y: {
+              beginAtZero: true
+            }
+          }
+        }
+      });
+
+      // Fees Doughnut Chart
+      var feesCtx = document.getElementById('feesDoughnutChart').getContext('2d');
+      var feesDoughnutChart = new Chart(feesCtx, {
+        type: 'doughnut',
+        data: {
+          labels: ['Received', 'Due'],
+          datasets: [{
+            label: 'Total Fees & Payments',
+            data: [150000, 50000], // Assuming ₹150,000 received and ₹50,000 due
+            backgroundColor: ['rgba(40, 167, 69, 0.5)', 'rgba(220, 53, 69, 0.5)'],
+            borderColor: ['rgba(40, 167, 69, 1)', 'rgba(220, 53, 69, 1)'],
+            borderWidth: 1
+          }]
+        },
+        options: {}
+      });
+
+      // Time Table Line Chart
+      var timeTableCtx = document.getElementById('timeTableLineChart').getContext('2d');
+      var timeTableLineChart = new Chart(timeTableCtx, {
+        type: 'line',
+        data: {
+          labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+          datasets: [{
+            label: 'Classes Scheduled',
+            data: [5, 5, 5, 5, 5, 5], // Assuming 5 classes scheduled every day
+            backgroundColor: 'rgba(75, 192, 192, 0.5)',
+            borderColor: 'rgba(75, 192, 192, 1)',
+            borderWidth: 1
+          }]
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true
+            }
+          }
+        }
+      });
+
+      // Departments Doughnut Chart
+      var departmentsCtx = document.getElementById('DepartmentsDoughnutChart').getContext('2d');
+      var departmentsDoughnutChart = new Chart(departmentsCtx, {
+        type: 'doughnut',
+        data: {
+          labels: ['Engineering', 'Medical', 'Arts', 'Commerce', 'Science', 'Law'],
+          datasets: [{
+            label: 'Total Departments',
+            data: [10, 8, 6, 5, 4, 2], // Assuming total departments for each category
+            backgroundColor: [
+              'rgba(255, 99, 132, 0.5)',
+              'rgba(54, 162, 235, 0.5)',
+              'rgba(255, 205, 86, 0.5)',
+              'rgba(75, 192, 192, 0.5)',
+              'rgba(153, 102, 255, 0.5)',
+              'rgba(255, 159, 64, 0.5)'
+            ],
+            borderColor: [
+              'rgba(255, 99, 132, 1)',
+              'rgba(54, 162, 235, 1)',
+              'rgba(255, 205, 86, 1)',
+              'rgba(75, 192, 192, 1)',
+              'rgba(153, 102, 255, 1)',
+              'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+          }]
+        },
+        options: {}
+      });
+
+      // Quiz Doughnut Chart
+      var quizCtx = document.getElementById('quizDoughnutChart').getContext('2d');
+      var quizDoughnutChart = new Chart(quizCtx, {
+        type: 'doughnut',
+        data: {
+          labels: ['Maths', 'Science', 'History', 'Geography', 'Literature', 'Music'],
+          datasets: [{
+            label: 'Quiz',
+            data: [20, 15, 10, 8, 5, 2], // Assuming total quizzes for each subject
+            backgroundColor: [
+              'rgba(255, 99, 132, 0.5)',
+              'rgba(54, 162, 235, 0.5)',
+              'rgba(255, 205, 86, 0.5)',
+              'rgba(75, 192, 192, 0.5)',
+              'rgba(153, 102, 255, 0.5)',
+              'rgba(255, 159, 64, 0.5)'
+            ],
+            borderColor: [
+              'rgba(255, 99, 132, 1)',
+              'rgba(54, 162, 235, 1)',
+              'rgba(255, 205, 86, 1)',
+              'rgba(75, 192, 192, 1)',
+              'rgba(153, 102, 255, 1)',
+              'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+          }]
+        },
+        options: {}
+      });
+
+      // Results Doughnut Chart
+      var resultsCtx = document.getElementById('resultsDoughnutChart').getContext('2d');
+      var resultsDoughnutChart = new Chart(resultsCtx, {
+        type: 'doughnut',
+        data: {
+          labels: ['Pass', 'Fail'],
+          datasets: [{
+            label: 'Results',
+            data: [80, 20], // Assuming 80% pass and 20% fail
+            backgroundColor: ['rgba(40, 167, 69, 0.5)', 'rgba(220, 53, 69, 0.5)'],
+            borderColor: ['rgba(40, 167, 69, 1)', 'rgba(220, 53, 69, 1)'],
+            borderWidth: 1
+          }]
+        },
+        options: {}
+      });
+    </script>
+
+    <script>
+      // JavaScript to toggle sidebar visibility
+      const toggleButton = document.getElementById('toggleSidebar');
+      const sidebar = document.querySelector('.bg-gray-800');
+
+      toggleButton.addEventListener('click', () => {
+        sidebar.classList.toggle('hidden');
+      });
+
+      // Profile Menubar 
+      const prifilepic = document.getElementById('profilepic');
+      const profilemenu = document.getElementById('profilemenu');
+
+      profilepic.addEventListener('click', () => {
+        profilemenu.classList.toggle("hidden");
+      });
+
+    </script>
+    <!-- Ion-icons  -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

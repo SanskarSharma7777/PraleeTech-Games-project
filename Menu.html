@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-900 text-white">
+  <div class="flex h-screen">
+    <!-- Sidebar -->
+    <div class="w-1/4 bg-gray-800">
+      <div class="p-4">
+        <h1 class="text-3xl font-bold mb-6">Menus</h1>
+        <ul>
+          <li><a href="#" onclick="showSection('addDepartment')" class="block py-2 px-4 hover:bg-gray-700">Add
+              Department</a></li>
+          <li><a href="#" onclick="showSection('departmentList')" class="block py-2 px-4 hover:bg-gray-700">Department
+              List</a></li>
+          <li><a href="#" onclick="showSection('addStaff')" class="block py-2 px-4 hover:bg-gray-700">Add Staff</a></li>
+          <li><a href="#" onclick="showSection('manageStaff')" class="block py-2 px-4 hover:bg-gray-700">Manage
+              Staff</a></li>
+          <li><a href="#" onclick="showSection('departmentInventory')"
+              class="block py-2 px-4 hover:bg-gray-700">Departmental Inventory</a></li>
+          <a href="index.html" class="block py-2 px-4 hover:bg-gray-700">Return to Dashboard</a>
+        </ul>
+      </div>
+    </div>
+    <!-- End of Sidebar -->
+
+    <!-- Main Content -->
+    <div class="flex-1 relative">
+      <!-- Toggle Sidebar Button -->
+      <!-- <button id="toggleSidebar" class="absolute top-0 left-0 bg-gray-800 text-white px-4 py-2 rounded-full focus:outline-none z-50">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M3 10a2 2 0 100-4 2 2 0 000 4zM9 10a2 2 0 100-4 2 2 0 000 4zM17 10a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                </svg>
+            </button> -->
+
+      <!-- Header -->
+      <header class="bg-gray-700 border-b border-gray-600 py-4 px-6 flex justify-between items-center">
+        <div class="flex gap-4">
+          <button id="toggleSidebar">
+            <ion-icon class="text-2xl flex justify-center items-center" name="grid-outline"></ion-icon>
+          </button>
+          <h1 class="text-3xl font-bold">Department Menu</h1>
+        </div>
+      
+      </header>
+
+      <!-- End of Toggle Sidebar Button -->
+      <!-- Add Department Section -->
+      <div id="addDepartment" class="max-w-md mx-auto my-20 bg-gray-800 rounded-lg overflow-hidden md:max-w-xl">
+        <div class="md:flex">
+          <div class="w-full px-4 py-8">
+            <h2 class="text-xl font-semibold mb-4">Add Department</h2>
+            <form>
+              <div class="mb-4">
+                <label for="category" class="block text-sm font-medium text-gray-300">Category</label>
+                <input type="text" id="category" name="category"
+                  class="mt-1 focus:ring-blue-500 focus:border-blue-500 block h-8 w-full px-2 shadow-sm sm:text-sm border-gray-700 rounded-md bg-gray-900 text-gray-100">
+              </div>
+              <div class="mb-4">
+                <label for="department_name" class="block text-sm font-medium text-gray-300">Department Name</label>
+                <input type="text" id="department_name" name="department_name"
+                  class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full h-8 px-2 shadow-sm sm:text-sm border-gray-700 rounded-md bg-gray-900 text-gray-100">
+              </div>
+              <div class="mt-4">
+                <button type="submit"
+                  class="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600">Submit</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- End of Add Department Section -->
+
+      <!-- Department List Page -->
+      <div id="departmentList" class="hidden p-10">
+        <h2 class="text-2xl font-semibold mb-4">Department List</h2>
+        <!-- Table -->
+        <table class="min-w-full divide-y divide-gray-700">
+          <thead class="bg-gray-800">
+            <tr>
+              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
+                Department Name</th>
+              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
+                Category</th>
+            </tr>
+          </thead>
+          <tbody class="bg-gray-900 divide-y divide-gray-700">
+            <!-- Sample Data -->
+            <tr>
+              <td class="px-6 py-4 whitespace-nowrap">Engineering</td>
+              <td class="px-6 py-4 whitespace-nowrap">Technology</td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 whitespace-nowrap">Marketing</td>
+              <td class="px-6 py-4 whitespace-nowrap">Business</td>
+            </tr>
+            <!-- End of Sample Data -->
+          </tbody>
+        </table>
+        <!-- End of Table -->
+      </div>
+      <!-- End of Department List Page -->
+
+      <!-- Add Staff Page -->
+      <div id="addStaff" class="hidden p-10">
+        <h2 class="text-2xl font-semibold mb-4">Add Staff</h2>
+        <!-- Form -->
+        <form>
+          <div class="mb-4">
+            <label for="staff_name" class="block text-sm font-medium text-gray-300">First Name</label>
+            <input type="text" id="first_name" name="first_name"
+            class="mt-1 block w-full py-2 px-3 border border-gray-700 bg-gray-900 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm text-gray-100">
+              <label for="staff_name" class="block text-sm font-medium text-gray-300">Middle Name</label>
+              <input type="text" id="middle_name" name="middle_name"
+              class="mt-1 block w-full py-2 px-3 border border-gray-700 bg-gray-900 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm text-gray-100">
+              <label for="last_name" class="block text-sm font-medium text-gray-300">Staff Name</label>
+            <input type="text" id="staff_name" name="staff_name"
+            class="mt-1 block w-full py-2 px-3 border border-gray-700 bg-gray-900 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm text-gray-100">
+            <label for="staff_name" class="block text-sm font-medium text-gray-300">Email id</label>
+            <input type="text" id="email_id" name="email_id"
+            class="mt-1 block w-full py-2 px-3 border border-gray-700 bg-gray-900 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm text-gray-100">
+            <label for="staff_name" class="block text-sm font-medium text-gray-300">Contact Number</label>
+            <input type="contact_number" id="contact_number" name="contact_number"
+            class="mt-1 block w-full py-2 px-3 border border-gray-700 bg-gray-900 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm text-gray-100">
+          
+          </div>
+          <div class="mb-4">
+            <label for="department" class="block text-sm font-medium text-gray-300">Department</label>
+            <select id="department" name="department"
+              class="mt-1 block w-full py-2 px-3 border border-gray-700 bg-gray-900 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm text-gray-100">
+              <option selected>Select department...</option>
+              <option>Engineering</option>
+              <option>Marketing</option>
+              <!-- Add more options as needed -->
+            </select>
+          </div>
+          <div class="mt-4">
+            <button type="submit"
+              class="w-auto position absolute bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600">Submit</button>
+          </div>
+        </form>
+        <!-- End of Form -->
+      </div>
+      <!-- End of Add Staff Page -->
+
+      <!-- Manage Staff Page -->
+      <div id="manageStaff" class="hidden p-10">
+        <h2 class="text-2xl font-semibold mb-4">Manage Staff</h2>
+        <!-- Table -->
+        <table class="min-w-full divide-y divide-gray-700">
+          <thead class="bg-gray-800">
+            <tr>
+              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
+                First Name</th>
+                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
+                  Middle Name</th>
+                  <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
+                    Last Name</th>
+                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
+                      Email id</th>
+                      <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
+                        Contact No.</th>
+                        
+              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
+                Staff Name</th>
+              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
+                Department</th>
+              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
+                Actions</th>
+            </tr>
+          </thead>
+          <tbody class="bg-gray-900 divide-y divide-gray-700">
+            <!-- Sample Data -->
+            <tr>
+              <td class="px-6 py-4 whitespace-nowrap">Sanskar</td>
+              <td class="px-6 py-4 whitespace-nowrap">Vivek</td>
+              <td class="px-6 py-4 whitespace-nowrap">Sharma</td>
+              <td class="px-6 py-4 whitespace-nowrap">sanskarsharmajio@gmail.com</td>
+              <td class="px-6 py-4 whitespace-nowrap">123456789</td>
+              <td class="px-6 py-4 whitespace-nowrap">Sanskar Sharma</td>
+              <td class="px-6 py-4 whitespace-nowrap">Engineering</td>
+              <td class="px-6 py-4 whitespace-nowrap">
+                <button class="text-blue-400 hover:text-blue-600">Edit</button>
+                <button class="text-red-400 hover:text-red-600 ml-2">Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 whitespace-nowrap">Avc</td>
+              <td class="px-6 py-4 whitespace-nowrap">Xyz</td>
+              <td class="px-6 py-4 whitespace-nowrap">Abc</td>
+              <td class="px-6 py-4 whitespace-nowrap">avcabcjio@gmail.com</td>
+              <td class="px-6 py-4 whitespace-nowrap">987654321</td>
+              <td class="px-6 py-4 whitespace-nowrap">Avc Abc</td>
+              <td class="px-6 py-4 whitespace-nowrap">Marketing</td>
+              <td class="px-6 py-4 whitespace-nowrap">
+                <button class="text-blue-400 hover:text-blue-600">Edit</button>
+                <button class="text-red-400 hover:text-red-600 ml-2">Delete</button>
+              </td>
+            </tr>
+            <!-- End of Sample Data -->
+          </tbody>
+        </table>
+        <!-- End of Table -->
+      </div>
+      <!-- End of Manage Staff Page -->
+
+      <!-- Departmental Inventory Page -->
+      <div id="departmentInventory" class="hidden p-10">
+        <h2 class="text-2xl font-semibold mb-4">Departmental Inventory</h2>
+        <!-- Table -->
+        <table class="min-w-full divide-y divide-gray-700">
+          <thead class="bg-gray-800">
+            <tr>
+              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
+                Item</th>
+              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
+                Quantity</th>
+              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
+                Price</th>
+            </tr>
+          </thead>
+          <tbody class="bg-gray-900 divide-y divide-gray-700">
+            <!-- Sample Data -->
+            <tr>
+              <td class="px-6 py-4 whitespace-nowrap">Laptops</td>
+              <td class="px-6 py-4 whitespace-nowrap">10</td>
+              <td class="px-6 py-4 whitespace-nowrap">$1000</td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 whitespace-nowrap">Printers</td>
+              <td class="px-6 py-4 whitespace-nowrap">5</td>
+              <td class="px-6 py-4 whitespace-nowrap">$500</td>
+            </tr>
+            <!-- End of Sample Data -->
+          </tbody>
+        </table>
+        <!-- End of Table -->
+      </div>
+      <!-- End of Departmental Inventory Page -->
+    </div>
+    <!-- End of Main Content -->
+  </div>
+
+  <script>
+    function showSection(sectionId) {
+      // Hide all sections
+      document.querySelectorAll('.flex-1 > div').forEach(function (section) {
+        section.classList.add('hidden');
+      });
+
+      // Show the selected section
+      document.getElementById(sectionId).classList.remove('hidden');
+    }
+
+    function toggleSidebar() {
+      const sidebar = document.querySelector('.bg-gray-800');
+      sidebar.classList.toggle('hidden');
+    }
+    // JavaScript to toggle sidebar visibility
+    const toggleButton = document.getElementById('toggleSidebar');
+    const sidebar = document.querySelector('.bg-gray-800');
+
+    toggleButton.addEventListener('click', () => {
+      sidebar.classList.toggle('hidden');
+    });
+  </script>
+
+  <!-- Ion-icons  -->
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
